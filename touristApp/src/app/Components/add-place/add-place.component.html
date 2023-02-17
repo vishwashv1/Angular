@@ -1,0 +1,32 @@
+<div class="container">
+    <h2>Add new Place</h2>
+    <hr>
+    <div>
+        <p>
+            <input [(ngModel)]="AName" placeholder="Enter the Place Name" />
+        </p>
+        <p>
+            <input [(ngModel)]="APinCode" placeholder="Enter the Place Name" />
+        </p>
+        <p>
+            <input [(ngModel)]="AState" placeholder="Enter the Place Name" />
+        </p>
+        <p>
+            <select [(ngModel)]="ASignificance">
+                <option>Historic</option>    
+                <option>Religious</option>    
+                <option>Leisure</option>    
+                <option>HillStation</option>    
+            </select>
+        </p>
+        <p>
+            <input [(ngModel)]="ADescription" placeholder="Enter the Desciption" />
+        </p>
+        <p>
+            <input [(ngModel)]="ImagePath"  type="file" />
+        </p>
+        <p>
+            <button (click)="onAddNewPlace()" class="btn btn-danger">Add New Place</button>
+        </p>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+<div class="row">
+    <div class="col-md-6">
+        <input type="search" width="55%" placeholder="Search Places" [(ngModel)]="searchCondition" class="search form-control" />
+    </div>
+    <div class="col-md-5">
+        <button (click)="onAddNew()" class="btn btn-danger">Add New Place</button>
+    </div>
+</div>
+<h2>List of Places that u Explore</h2>
+<div>
+    <app-add-place></app-add-place>
+</div>
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-md-6" *ngFor="let item of tourist | place : searchCondition">
+            <p>{{item.Name | uppercase}}</p>
+            <p><a href="#" (click)="viewplace(item)">More</a></p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8">
+            <h2>{{selectedPlace.Name}}</h2>
+            <div style="display: inline-block;"> {{selectedPlace.Description}}
+               
+            </div>
+        </div>
+        <div *ngFor="let img of  selectedImages " class="col-md-4">
+            <img [src]=img alt="img" width="50px" height="50px" />
+
+        </div>
+    </div>
+</div>
